@@ -19,7 +19,11 @@ struct SettingsView: View {
                     "settings.birth.date",
                     selection: $store.birthdate.sending(\.setBirthdate),
                     in: .thePast,
-                    displayedComponents: .date
+                    displayedComponents: store.shouldShowTime ? [.date, .hourAndMinute] : .date
+                )
+                Toggle(
+                    "settings.show.time",
+                    isOn: $store.shouldShowTime.sending(\.setShouldShowTime)
                 )
             } footer: {
                 HStack(alignment: .top) {

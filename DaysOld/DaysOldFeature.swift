@@ -29,12 +29,13 @@ struct DaysOldFeature {
     }
 
     @Dependency(\.date.now) var now
+    @Dependency(\.calendar) var calendar
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
             case .settingsButtonTapped:
-                state.settings = SettingsFeature.State(birthdate: state.birthdate ?? now)
+                state.settings = SettingsFeature.State(birthdate: state.birthdate ?? defaultDateForSettings)
                 return .none
             case .settingsAction(.presented(.delegate(.setBirthdate(let date)))):
                 state.birthdate = date
@@ -47,5 +48,11 @@ struct DaysOldFeature {
         .ifLet(\.$settings, action: \.settingsAction) {
             SettingsFeature()
         }
+    }
+
+    // MARK: - Private
+
+    private var defaultDateForSettings: Date {
+        now.movingToBeginningOfDay(with: calendar)
     }
 }

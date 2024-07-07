@@ -46,7 +46,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Your birth date will be stored securely on your device, and will not be saved on a remote server or transmitted to any third party."
+            "value" : "Your birth date will be stored securely on your device, and will not be saved on a web server or transmitted to any third party."
           }
         }
       }
@@ -57,6 +57,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Done"
+          }
+        }
+      }
+    },
+    "settings.show.time" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Include time of day"
           }
         }
       }

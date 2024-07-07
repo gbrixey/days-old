@@ -13,12 +13,14 @@ struct SettingsFeature {
     @ObservableState
     struct State: Equatable {
         var birthdate: Date
+        @Shared(.appStorage("shouldShowTime")) var shouldShowTime = false
     }
 
     // TODO: Allow user to set time zone
     enum Action {
         case doneButtonTapped
         case setBirthdate(Date)
+        case setShouldShowTime(Bool)
         case delegate(Delegate)
 
         enum Delegate: Equatable {
@@ -27,6 +29,7 @@ struct SettingsFeature {
     }
 
     @Dependency(\.dismiss) var dismiss
+    @Dependency(\.calendar) var calendar
     @Dependency(\.keychainHelper) var keychainHelper
 
     var body: some ReducerOf<Self> {
@@ -41,6 +44,13 @@ struct SettingsFeature {
                 // TODO: Add error alert
                 try? keychainHelper.storeBirthdate(birthdate)
                 return .send(.delegate(.setBirthdate(birthdate)))
+            case .setShouldShowTime(let shouldShowTime):
+                state.shouldShowTime = shouldShowTime
+                // When disabling the time picker, remove hour and minute from the birthdate
+                if !shouldShowTime {
+                    return .send(.setBirthdate(state.birthdate.movingToBeginningOfDay(with: calendar)))
+                }
+                return .none
             case .delegate:
                 return .none
             }
