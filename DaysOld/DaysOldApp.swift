@@ -6,12 +6,33 @@
 //
 
 import SwiftUI
+import TipKit
+import ComposableArchitecture
 
 @main
 struct DaysOldApp: App {
+
+    // MARK: - Public
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DaysOldView(
+                store: DaysOldApp.store
+            )
         }
+    }
+
+    init() {
+        try? Tips.configure()
+    }
+
+    // MARK: - Private
+
+    private static let store = Store(initialState: DaysOldFeature.State(birthdate: initialBirthdate)) {
+        DaysOldFeature()
+    }
+
+    private static var initialBirthdate: Date? {
+        KeychainHelper.live.fetchBirthdate()
     }
 }
