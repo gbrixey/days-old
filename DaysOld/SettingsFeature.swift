@@ -14,13 +14,14 @@ struct SettingsFeature {
     struct State: Equatable {
         var birthdate: Date
         @Shared(.appStorage("shouldShowTime")) var shouldShowTime = false
+        @Shared(.appStorage("timeZoneIdentifier")) var timeZoneIdentifier = TimeZone.autoupdatingCurrent.identifier
     }
 
-    // TODO: Allow user to set time zone
     enum Action {
         case doneButtonTapped
         case setBirthdate(Date)
         case setShouldShowTime(Bool)
+        case setTimeZoneIdentifier(String)
         case delegate(Delegate)
 
         enum Delegate: Equatable {
@@ -30,6 +31,7 @@ struct SettingsFeature {
 
     @Dependency(\.dismiss) var dismiss
     @Dependency(\.calendar) var calendar
+    @Dependency(\.timeZone) var timeZone
     @Dependency(\.keychainHelper) var keychainHelper
 
     var body: some ReducerOf<Self> {
@@ -48,9 +50,19 @@ struct SettingsFeature {
                 state.shouldShowTime = shouldShowTime
                 // When disabling the time picker, remove hour and minute from the birthdate
                 if !shouldShowTime {
-                    return .send(.setBirthdate(state.birthdate.movingToBeginningOfDay(with: calendar)))
+                    let newBirthdate = state.birthdate.movingToBeginningOfDay(with: calendar)
+                    guard newBirthdate != state.birthdate else { return .none }
+                    return .send(.setBirthdate(newBirthdate))
                 }
                 return .none
+            case .setTimeZoneIdentifier(let timeZoneIdentifier):
+                let oldTimeZoneIdentifier = state.timeZoneIdentifier
+                state.timeZoneIdentifier = timeZoneIdentifier
+                guard let oldTimeZone = TimeZone(identifier: oldTimeZoneIdentifier),
+                      let newTimeZone = TimeZone(identifier: timeZoneIdentifier) else { return .none }
+                let timeInterval = TimeInterval(newTimeZone.secondsFromGMT() - oldTimeZone.secondsFromGMT())
+                guard timeInterval != 0 else { return .none }
+                return .send(.setBirthdate(state.birthdate.addingTimeInterval(timeInterval)))
             case .delegate:
                 return .none
             }

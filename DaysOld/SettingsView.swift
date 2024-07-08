@@ -25,6 +25,14 @@ struct SettingsView: View {
                     "settings.show.time",
                     isOn: $store.shouldShowTime.sending(\.setShouldShowTime)
                 )
+                Picker(
+                    "settings.time.zone",
+                    selection: $store.timeZoneIdentifier.sending(\.setTimeZoneIdentifier)
+                ) {
+                    ForEach(TimeZone.knownTimeZoneIdentifiers, id: \.self) {
+                        Text($0)
+                    }
+                }
             } footer: {
                 HStack(alignment: .top) {
                     Image(systemName: "info.circle.fill")

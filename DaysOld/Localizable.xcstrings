@@ -71,6 +71,16 @@
         }
       }
     },
+    "settings.time.zone" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Time zone"
+          }
+        }
+      }
+    },
     "settings.tip.message" : {
       "localizations" : {
         "en" : {
