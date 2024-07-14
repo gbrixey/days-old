@@ -21,7 +21,7 @@ struct DaysOldView: View {
                         .font(.system(size: 24))
                     Text(daysSinceBirthdate, format: .number)
                         .font(.system(size: 32, weight: .semibold))
-                    Text("days.old.suffix")
+                    Text(daysSinceBirthdate == 1 ? "days.old.suffix.singular" : "days.old.suffix.plural")
                         .font(.system(size: 24))
                 }
             }
