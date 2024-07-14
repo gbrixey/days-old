@@ -24,6 +24,7 @@ struct SettingsFeature {
         case setTimeZoneIdentifier(String)
         case delegate(Delegate)
 
+        @CasePathable
         enum Delegate: Equatable {
             case setBirthdate(Date)
         }
@@ -31,7 +32,6 @@ struct SettingsFeature {
 
     @Dependency(\.dismiss) var dismiss
     @Dependency(\.calendar) var calendar
-    @Dependency(\.timeZone) var timeZone
     @Dependency(\.keychainHelper) var keychainHelper
 
     var body: some ReducerOf<Self> {

@@ -18,15 +18,20 @@ struct DaysOldFeature {
 
         init(birthdate: Date?) {
             self.birthdate = birthdate
-            self.daysSinceBirthdate = birthdate?.daysBefore(.now)
         }
     }
 
     enum Action {
         case startTimer
-        case timerIncremented
+        // This action is only used in unit tests, to end the timer effect.
+        case stopTimer
+        case timerTick
         case settingsButtonTapped
         case settingsAction(PresentationAction<SettingsFeature.Action>)
+    }
+
+    enum CancelID {
+        case timer
     }
 
     @Dependency(\.date.now) var now
@@ -37,12 +42,16 @@ struct DaysOldFeature {
         Reduce { state, action in
             switch action {
             case .startTimer:
+                // Set initial `daysSinceBirthdate` value
+                state.daysSinceBirthdate = state.birthdate?.daysBefore(now)
                 return .run { send in
                     for await _ in clock.timer(interval: .seconds(5)) {
-                        await send(.timerIncremented)
+                        await send(.timerTick)
                     }
-                }
-            case .timerIncremented:
+                }.cancellable(id: CancelID.timer)
+            case .stopTimer:
+                return .cancel(id: CancelID.timer)
+            case .timerTick:
                 state.daysSinceBirthdate = state.birthdate?.daysBefore(now)
                 return .none
             case .settingsButtonTapped:

@@ -23,6 +23,7 @@
 		7EB534AD2C22242E00FFD6B7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534AC2C22242E00FFD6B7 /* Localizable.xcstrings */; };
 		7EB534B22C3B136800FFD6B7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */; };
 		7EB534B42C3B6E2E00FFD6B7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534B32C3B6E2E00FFD6B7 /* README.md */; };
+		7EB534B62C446B1D00FFD6B7 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B52C446B1D00FFD6B7 /* SettingsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7EB534AC2C22242E00FFD6B7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		7EB534B32C3B6E2E00FFD6B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7EB534B52C446B1D00FFD6B7 /* SettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				7EB534832C1F570000FFD6B7 /* DaysOldTests.swift */,
+				7EB534B52C446B1D00FFD6B7 /* SettingsTests.swift */,
 			);
 			path = DaysOldTests;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EB534B62C446B1D00FFD6B7 /* SettingsTests.swift in Sources */,
 				7EB534842C1F570000FFD6B7 /* DaysOldTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
