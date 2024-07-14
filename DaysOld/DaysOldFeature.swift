@@ -22,18 +22,29 @@ struct DaysOldFeature {
         }
     }
 
-    // TODO: Add timer to update daysSinceBirthdate
     enum Action {
+        case startTimer
+        case timerIncremented
         case settingsButtonTapped
         case settingsAction(PresentationAction<SettingsFeature.Action>)
     }
 
     @Dependency(\.date.now) var now
     @Dependency(\.calendar) var calendar
+    @Dependency(\.continuousClock) var clock
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
             switch action {
+            case .startTimer:
+                return .run { send in
+                    for await _ in clock.timer(interval: .seconds(5)) {
+                        await send(.timerIncremented)
+                    }
+                }
+            case .timerIncremented:
+                state.daysSinceBirthdate = state.birthdate?.daysBefore(now)
+                return .none
             case .settingsButtonTapped:
                 state.settings = SettingsFeature.State(birthdate: state.birthdate ?? defaultDateForSettings)
                 return .none

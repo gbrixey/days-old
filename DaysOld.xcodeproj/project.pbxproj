@@ -22,6 +22,7 @@
 		7EB534AB2C2222F300FFD6B7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534AA2C2222F300FFD6B7 /* SettingsView.swift */; };
 		7EB534AD2C22242E00FFD6B7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534AC2C22242E00FFD6B7 /* Localizable.xcstrings */; };
 		7EB534B22C3B136800FFD6B7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */; };
+		7EB534B42C3B6E2E00FFD6B7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534B32C3B6E2E00FFD6B7 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7EB534AA2C2222F300FFD6B7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7EB534AC2C22242E00FFD6B7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		7EB534B32C3B6E2E00FFD6B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				7EB534702C1F56FF00FFD6B7 /* DaysOld */,
 				7EB534822C1F570000FFD6B7 /* DaysOldTests */,
 				7EB5348C2C1F570000FFD6B7 /* DaysOldUITests */,
+				7EB534B32C3B6E2E00FFD6B7 /* README.md */,
 				7EB5346F2C1F56FF00FFD6B7 /* Products */,
 				7EB5349E2C1F58D300FFD6B7 /* Frameworks */,
 			);
@@ -283,6 +286,7 @@
 			files = (
 				7EB5347A2C1F570000FFD6B7 /* Preview Assets.xcassets in Resources */,
 				7EB534762C1F570000FFD6B7 /* Assets.xcassets in Resources */,
+				7EB534B42C3B6E2E00FFD6B7 /* README.md in Resources */,
 				7EB534AD2C22242E00FFD6B7 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

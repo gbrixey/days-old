@@ -45,6 +45,9 @@ struct DaysOldView: View {
                 SettingsView(store: settingsStore)
             }
         }
+        .task {
+            await store.send(.startTimer).finish()
+        }
     }
 
     init(store: StoreOf<DaysOldFeature>) {
