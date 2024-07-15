@@ -24,6 +24,17 @@
 		7EB534B22C3B136800FFD6B7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */; };
 		7EB534B42C3B6E2E00FFD6B7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534B32C3B6E2E00FFD6B7 /* README.md */; };
 		7EB534B62C446B1D00FFD6B7 /* SettingsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B52C446B1D00FFD6B7 /* SettingsTests.swift */; };
+		7EB534D92C447B0E00FFD6B7 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB534D82C447B0E00FFD6B7 /* WidgetKit.framework */; };
+		7EB534DB2C447B0E00FFD6B7 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB534DA2C447B0E00FFD6B7 /* SwiftUI.framework */; };
+		7EB534DE2C447B0E00FFD6B7 /* DaysOldWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534DD2C447B0E00FFD6B7 /* DaysOldWidgetBundle.swift */; };
+		7EB534E02C447B0E00FFD6B7 /* DaysOldWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534DF2C447B0E00FFD6B7 /* DaysOldWidget.swift */; };
+		7EB534E22C447B0F00FFD6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534E12C447B0F00FFD6B7 /* Assets.xcassets */; };
+		7EB534E62C447B0F00FFD6B7 /* DaysOldWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7EB534D72C447B0E00FFD6B7 /* DaysOldWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7EB534EC2C447D4600FFD6B7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534EB2C447D4600FFD6B7 /* Localizable.xcstrings */; };
+		7EB534ED2C447EF500FFD6B7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */; };
+		7EB534EE2C448EED00FFD6B7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5349C2C1F58B400FFD6B7 /* KeychainHelper.swift */; };
+		7EB534F02C448F1A00FFD6B7 /* KeychainHelperKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534EF2C448F1A00FFD6B7 /* KeychainHelperKey.swift */; };
+		7EB534F32C45C87700FFD6B7 /* WidgetCenterKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F22C45C87700FFD6B7 /* WidgetCenterKey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +52,28 @@
 			remoteGlobalIDString = 7EB5346D2C1F56FF00FFD6B7;
 			remoteInfo = DaysOld;
 		};
+		7EB534E42C447B0F00FFD6B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB534662C1F56FF00FFD6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EB534D62C447B0E00FFD6B7;
+			remoteInfo = DaysOldWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7EB534E72C447B0F00FFD6B7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7EB534E62C447B0F00FFD6B7 /* DaysOldWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7EB5346E2C1F56FF00FFD6B7 /* DaysOld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysOld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,6 +97,17 @@
 		7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		7EB534B32C3B6E2E00FFD6B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7EB534B52C446B1D00FFD6B7 /* SettingsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTests.swift; sourceTree = "<group>"; };
+		7EB534D72C447B0E00FFD6B7 /* DaysOldWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysOldWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB534D82C447B0E00FFD6B7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		7EB534DA2C447B0E00FFD6B7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7EB534DD2C447B0E00FFD6B7 /* DaysOldWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWidgetBundle.swift; sourceTree = "<group>"; };
+		7EB534DF2C447B0E00FFD6B7 /* DaysOldWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWidget.swift; sourceTree = "<group>"; };
+		7EB534E12C447B0F00FFD6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7EB534E32C447B0F00FFD6B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EB534EB2C447D4600FFD6B7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		7EB534EF2C448F1A00FFD6B7 /* KeychainHelperKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelperKey.swift; sourceTree = "<group>"; };
+		7EB534F12C45C50A00FFD6B7 /* DaysOldWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysOldWidgetExtension.entitlements; sourceTree = "<group>"; };
+		7EB534F22C45C87700FFD6B7 /* WidgetCenterKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterKey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +134,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EB534D42C447B0E00FFD6B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB534DB2C447B0E00FFD6B7 /* SwiftUI.framework in Frameworks */,
+				7EB534D92C447B0E00FFD6B7 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				7EB534702C1F56FF00FFD6B7 /* DaysOld */,
+				7EB534DC2C447B0E00FFD6B7 /* DaysOldWidget */,
 				7EB534822C1F570000FFD6B7 /* DaysOldTests */,
 				7EB5348C2C1F570000FFD6B7 /* DaysOldUITests */,
 				7EB534B32C3B6E2E00FFD6B7 /* README.md */,
@@ -112,6 +165,7 @@
 				7EB5346E2C1F56FF00FFD6B7 /* DaysOld.app */,
 				7EB5347F2C1F570000FFD6B7 /* DaysOldTests.xctest */,
 				7EB534892C1F570000FFD6B7 /* DaysOldUITests.xctest */,
+				7EB534D72C447B0E00FFD6B7 /* DaysOldWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -125,6 +179,8 @@
 				7EB534AA2C2222F300FFD6B7 /* SettingsView.swift */,
 				7EB534A82C22208800FFD6B7 /* SettingsFeature.swift */,
 				7EB5349C2C1F58B400FFD6B7 /* KeychainHelper.swift */,
+				7EB534EF2C448F1A00FFD6B7 /* KeychainHelperKey.swift */,
+				7EB534F22C45C87700FFD6B7 /* WidgetCenterKey.swift */,
 				7EB534B02C3B135C00FFD6B7 /* Util */,
 				7EB534752C1F570000FFD6B7 /* Assets.xcassets */,
 				7EB534AC2C22242E00FFD6B7 /* Localizable.xcstrings */,
@@ -165,6 +221,8 @@
 			children = (
 				7EB534A12C1F595A00FFD6B7 /* CryptoKit.framework */,
 				7EB5349F2C1F58D300FFD6B7 /* Security.framework */,
+				7EB534D82C447B0E00FFD6B7 /* WidgetKit.framework */,
+				7EB534DA2C447B0E00FFD6B7 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,6 +235,19 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		7EB534DC2C447B0E00FFD6B7 /* DaysOldWidget */ = {
+			isa = PBXGroup;
+			children = (
+				7EB534DD2C447B0E00FFD6B7 /* DaysOldWidgetBundle.swift */,
+				7EB534DF2C447B0E00FFD6B7 /* DaysOldWidget.swift */,
+				7EB534E12C447B0F00FFD6B7 /* Assets.xcassets */,
+				7EB534EB2C447D4600FFD6B7 /* Localizable.xcstrings */,
+				7EB534F12C45C50A00FFD6B7 /* DaysOldWidgetExtension.entitlements */,
+				7EB534E32C447B0F00FFD6B7 /* Info.plist */,
+			);
+			path = DaysOldWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -187,10 +258,12 @@
 				7EB5346A2C1F56FF00FFD6B7 /* Sources */,
 				7EB5346B2C1F56FF00FFD6B7 /* Frameworks */,
 				7EB5346C2C1F56FF00FFD6B7 /* Resources */,
+				7EB534E72C447B0F00FFD6B7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7EB534E52C447B0F00FFD6B7 /* PBXTargetDependency */,
 			);
 			name = DaysOld;
 			packageProductDependencies = (
@@ -236,6 +309,23 @@
 			productReference = 7EB534892C1F570000FFD6B7 /* DaysOldUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		7EB534D62C447B0E00FFD6B7 /* DaysOldWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EB534EA2C447B0F00FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWidgetExtension" */;
+			buildPhases = (
+				7EB534D32C447B0E00FFD6B7 /* Sources */,
+				7EB534D42C447B0E00FFD6B7 /* Frameworks */,
+				7EB534D52C447B0E00FFD6B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaysOldWidgetExtension;
+			productName = DaysOldWidgetExtension;
+			productReference = 7EB534D72C447B0E00FFD6B7 /* DaysOldWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -257,6 +347,9 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = 7EB5346D2C1F56FF00FFD6B7;
 					};
+					7EB534D62C447B0E00FFD6B7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
 				};
 			};
 			buildConfigurationList = 7EB534692C1F56FF00FFD6B7 /* Build configuration list for PBXProject "DaysOld" */;
@@ -266,6 +359,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 7EB534652C1F56FF00FFD6B7;
 			packageReferences = (
@@ -278,6 +372,7 @@
 				7EB5346D2C1F56FF00FFD6B7 /* DaysOld */,
 				7EB5347E2C1F570000FFD6B7 /* DaysOldTests */,
 				7EB534882C1F570000FFD6B7 /* DaysOldUITests */,
+				7EB534D62C447B0E00FFD6B7 /* DaysOldWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -308,6 +403,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EB534D52C447B0E00FFD6B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB534EC2C447D4600FFD6B7 /* Localizable.xcstrings in Resources */,
+				7EB534E22C447B0F00FFD6B7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -320,8 +424,10 @@
 				7EB5349D2C1F58B400FFD6B7 /* KeychainHelper.swift in Sources */,
 				7EB534722C1F56FF00FFD6B7 /* DaysOldApp.swift in Sources */,
 				7EB534AB2C2222F300FFD6B7 /* SettingsView.swift in Sources */,
+				7EB534F32C45C87700FFD6B7 /* WidgetCenterKey.swift in Sources */,
 				7EB534A72C22014400FFD6B7 /* DaysOldFeature.swift in Sources */,
 				7EB534A92C22208800FFD6B7 /* SettingsFeature.swift in Sources */,
+				7EB534F02C448F1A00FFD6B7 /* KeychainHelperKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,6 +449,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EB534D32C447B0E00FFD6B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB534E02C447B0E00FFD6B7 /* DaysOldWidget.swift in Sources */,
+				7EB534DE2C447B0E00FFD6B7 /* DaysOldWidgetBundle.swift in Sources */,
+				7EB534ED2C447EF500FFD6B7 /* DateExtensions.swift in Sources */,
+				7EB534EE2C448EED00FFD6B7 /* KeychainHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -355,6 +472,11 @@
 			isa = PBXTargetDependency;
 			target = 7EB5346D2C1F56FF00FFD6B7 /* DaysOld */;
 			targetProxy = 7EB5348A2C1F570000FFD6B7 /* PBXContainerItemProxy */;
+		};
+		7EB534E52C447B0F00FFD6B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EB534D62C447B0E00FFD6B7 /* DaysOldWidgetExtension */;
+			targetProxy = 7EB534E42C447B0F00FFD6B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -476,6 +598,7 @@
 		7EB534942C1F570000FFD6B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DaysOld/DaysOld.entitlements;
@@ -514,6 +637,7 @@
 		7EB534952C1F570000FFD6B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = DaysOld/DaysOld.entitlements;
@@ -639,6 +763,67 @@
 			};
 			name = Release;
 		};
+		7EB534E82C447B0F00FFD6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DaysOldWidget/DaysOldWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DaysOldWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOldWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glenb.DaysOld.DaysOldWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7EB534E92C447B0F00FFD6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DaysOldWidget/DaysOldWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DaysOldWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOldWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glenb.DaysOld.DaysOldWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -674,6 +859,15 @@
 			buildConfigurations = (
 				7EB5349A2C1F570000FFD6B7 /* Debug */,
 				7EB5349B2C1F570000FFD6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EB534EA2C447B0F00FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EB534E82C447B0F00FFD6B7 /* Debug */,
+				7EB534E92C447B0F00FFD6B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

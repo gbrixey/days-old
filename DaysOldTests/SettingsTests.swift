@@ -12,6 +12,27 @@ import XCTest
 final class SettingsTests: XCTestCase {
 
     @MainActor
+    func testSetBirthdate() async {
+        let oldBirthdate = Date(timeIntervalSince1970: 0)
+        let newBirthdate = Date(timeIntervalSince1970: 1000000000)
+        let calendar = Calendar(identifier: .gregorian)
+        let store = TestStore(initialState: SettingsFeature.State(birthdate: oldBirthdate)) {
+            SettingsFeature()
+        } withDependencies: {
+            $0.calendar = calendar
+        }
+        // The next line is just a sanity check
+        XCTAssertNotEqual(KeychainHelper.test.fetchBirthdate(), newBirthdate)
+        XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, [])
+        await store.send(.setBirthdate(newBirthdate)) {
+            $0.birthdate = newBirthdate
+        }
+        await store.receive(\.delegate.setBirthdate)
+        XCTAssertEqual(KeychainHelper.test.fetchBirthdate(), newBirthdate)
+        XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, ["DaysOldWidget"])
+    }
+
+    @MainActor
     func testSetShouldShowTime() async {
         let calendar = Calendar(identifier: .gregorian)
         let store = TestStore(initialState: SettingsFeature.State(birthdate: Date(timeIntervalSince1970: 0))) {

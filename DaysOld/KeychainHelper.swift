@@ -7,7 +7,6 @@
 
 import Foundation
 import Security
-import ComposableArchitecture
 
 class KeychainHelper {
 
@@ -20,9 +19,8 @@ class KeychainHelper {
         if environment == .test {
             return testDate
         }
-        let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-                                    kSecAttrAccount as String: Self.account,
-                                    kSecReturnData as String: true]
+        var query: [String: Any] = baseQuery
+        query[kSecReturnData as String] = true
         var item: CFTypeRef?
         let status = SecItemCopyMatching(query as CFDictionary, &item)
         guard status == errSecSuccess,
@@ -43,14 +41,12 @@ class KeychainHelper {
         let data = string.data(using: .utf8)!
         let status: OSStatus
         if birthdateExists {
-            let searchQuery: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-                                              kSecAttrAccount as String: Self.account]
+            let searchQuery: [String: Any] = baseQuery
             let attributesToUpdate: [String: Any] = [kSecValueData as String: data]
             status = SecItemUpdate(searchQuery as CFDictionary, attributesToUpdate as CFDictionary)
         } else {
-            let addQuery: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
-                                           kSecAttrAccount as String: Self.account,
-                                           kSecValueData as String: data]
+            var addQuery: [String: Any] = baseQuery
+            addQuery[kSecValueData as String] = data
             status = SecItemAdd(addQuery as CFDictionary, nil)
         }
         guard status == errSecSuccess else {
@@ -65,9 +61,14 @@ class KeychainHelper {
         case test
     }
 
-    private static let account = "birthday"
     private let environment: Environment
-    private var testDate = Date(timeIntervalSince1970: 727272000)
+    private var testDate = Date(timeIntervalSince1970: 0)
+
+    private var baseQuery: [String: Any] {
+        [kSecClass as String: kSecClassGenericPassword,
+         kSecAttrAccount as String: "birthday",
+         kSecAttrAccessGroup as String: "group.com.glenb.DaysOld"]
+    }
 
     private static let dateFormatter = {
         let formatter = ISO8601DateFormatter()
@@ -84,19 +85,4 @@ class KeychainHelper {
 
 enum KeychainError: Error {
     case failedToStoreBirthday(status: OSStatus)
-}
-
-// MARK: - DependencyKey
-
-private enum KeychainHelperKey: DependencyKey {
-    static let liveValue = KeychainHelper.live
-    static let testValue = KeychainHelper.test
-    static let previewValue = KeychainHelper.test
-}
-
-extension DependencyValues {
-    var keychainHelper: KeychainHelper {
-        get { self[KeychainHelperKey.self] }
-        set { self[KeychainHelperKey.self] = newValue }
-    }
 }

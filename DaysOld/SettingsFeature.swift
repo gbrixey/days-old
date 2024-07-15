@@ -33,6 +33,7 @@ struct SettingsFeature {
     @Dependency(\.dismiss) var dismiss
     @Dependency(\.calendar) var calendar
     @Dependency(\.keychainHelper) var keychainHelper
+    @Dependency(\.widgetCenter) var widgetCenter
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -45,6 +46,7 @@ struct SettingsFeature {
                 state.birthdate = birthdate
                 // TODO: Add error alert
                 try? keychainHelper.storeBirthdate(birthdate)
+                widgetCenter.reloadTimelines(ofKind: "DaysOldWidget")
                 return .send(.delegate(.setBirthdate(birthdate)))
             case .setShouldShowTime(let shouldShowTime):
                 state.shouldShowTime = shouldShowTime
