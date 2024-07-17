@@ -16,7 +16,7 @@ struct SettingsView: View {
         Form {
             Section {
                 DatePicker(
-                    "settings.birth.date",
+                    "settings.birthdate",
                     selection: $store.birthdate.sending(\.setBirthdate),
                     in: .thePast,
                     displayedComponents: store.shouldShowTime ? [.date, .hourAndMinute] : .date
@@ -50,6 +50,7 @@ struct SettingsView: View {
                 store.send(.doneButtonTapped)
             }
         }
+        .alert($store.scope(state: \.alert, action: \.alert))
     }
 }
 

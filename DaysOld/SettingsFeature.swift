@@ -15,6 +15,7 @@ struct SettingsFeature {
         var birthdate: Date
         @Shared(.appStorage("shouldShowTime")) var shouldShowTime = false
         @Shared(.appStorage("timeZoneIdentifier")) var timeZoneIdentifier = TimeZone.autoupdatingCurrent.identifier
+        @Presents var alert: AlertState<Action.Alert>?
     }
 
     enum Action {
@@ -23,10 +24,16 @@ struct SettingsFeature {
         case setShouldShowTime(Bool)
         case setTimeZoneIdentifier(String)
         case delegate(Delegate)
+        case alert(PresentationAction<Alert>)
 
         @CasePathable
         enum Delegate: Equatable {
             case setBirthdate(Date)
+        }
+
+        @CasePathable
+        enum Alert: Equatable {
+            // There are no alert actions yet
         }
     }
 
@@ -43,11 +50,15 @@ struct SettingsFeature {
                     await self.dismiss()
                 }
             case .setBirthdate(let birthdate):
-                state.birthdate = birthdate
-                // TODO: Add error alert
-                try? keychainHelper.storeBirthdate(birthdate)
-                widgetCenter.reloadTimelines(ofKind: "DaysOldWidget")
-                return .send(.delegate(.setBirthdate(birthdate)))
+                do {
+                    try keychainHelper.storeBirthdate(birthdate)
+                    state.birthdate = birthdate
+                    widgetCenter.reloadTimelines(ofKind: "DaysOldWidget")
+                    return .send(.delegate(.setBirthdate(birthdate)))
+                } catch {
+                    state.alert = .errorAlertState(message: error.localizedDescription)
+                    return .none
+                }
             case .setShouldShowTime(let shouldShowTime):
                 state.shouldShowTime = shouldShowTime
                 // When disabling the time picker, remove hour and minute from the birthdate
@@ -67,7 +78,26 @@ struct SettingsFeature {
                 return .send(.setBirthdate(state.birthdate.addingTimeInterval(timeInterval)))
             case .delegate:
                 return .none
+            case .alert:
+                return .none
             }
+        }
+        .ifLet(\.$alert, action: \.alert)
+    }
+}
+
+// MARK: - AlertState
+
+extension AlertState where Action == SettingsFeature.Action.Alert {
+    static func errorAlertState(message: String) -> Self {
+        Self {
+            TextState("error.title")
+        } actions: {
+            ButtonState(role: .cancel) {
+                TextState("error.ok")
+            }
+        } message: {
+            TextState(message)
         }
     }
 }

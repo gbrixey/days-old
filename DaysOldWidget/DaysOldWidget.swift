@@ -29,7 +29,7 @@ struct DaysOldProvider: TimelineProvider {
     }
 
     private var daysSinceBirthdate: Int? {
-        KeychainHelper.live.fetchBirthdate()?.daysBefore(.now)
+        KeychainHelper.shared.fetchBirthdate()?.daysBefore(.now)
     }
 }
 

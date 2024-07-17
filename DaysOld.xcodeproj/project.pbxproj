@@ -35,6 +35,8 @@
 		7EB534EE2C448EED00FFD6B7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5349C2C1F58B400FFD6B7 /* KeychainHelper.swift */; };
 		7EB534F02C448F1A00FFD6B7 /* KeychainHelperKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534EF2C448F1A00FFD6B7 /* KeychainHelperKey.swift */; };
 		7EB534F32C45C87700FFD6B7 /* WidgetCenterKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F22C45C87700FFD6B7 /* WidgetCenterKey.swift */; };
+		7EB534F52C47330B00FFD6B7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */; };
+		7EB534F62C47378500FFD6B7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,7 @@
 		7EB534EF2C448F1A00FFD6B7 /* KeychainHelperKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelperKey.swift; sourceTree = "<group>"; };
 		7EB534F12C45C50A00FFD6B7 /* DaysOldWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DaysOldWidgetExtension.entitlements; sourceTree = "<group>"; };
 		7EB534F22C45C87700FFD6B7 /* WidgetCenterKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterKey.swift; sourceTree = "<group>"; };
+		7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */,
+				7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -421,6 +425,7 @@
 			files = (
 				7EB534B22C3B136800FFD6B7 /* DateExtensions.swift in Sources */,
 				7EB534742C1F56FF00FFD6B7 /* DaysOldView.swift in Sources */,
+				7EB534F52C47330B00FFD6B7 /* StringExtensions.swift in Sources */,
 				7EB5349D2C1F58B400FFD6B7 /* KeychainHelper.swift in Sources */,
 				7EB534722C1F56FF00FFD6B7 /* DaysOldApp.swift in Sources */,
 				7EB534AB2C2222F300FFD6B7 /* SettingsView.swift in Sources */,
@@ -455,6 +460,7 @@
 			files = (
 				7EB534E02C447B0E00FFD6B7 /* DaysOldWidget.swift in Sources */,
 				7EB534DE2C447B0E00FFD6B7 /* DaysOldWidgetBundle.swift in Sources */,
+				7EB534F62C47378500FFD6B7 /* StringExtensions.swift in Sources */,
 				7EB534ED2C447EF500FFD6B7 /* DateExtensions.swift in Sources */,
 				7EB534EE2C448EED00FFD6B7 /* KeychainHelper.swift in Sources */,
 			);

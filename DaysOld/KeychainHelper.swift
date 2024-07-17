@@ -8,17 +8,18 @@
 import Foundation
 import Security
 
-class KeychainHelper {
+protocol KeychainHelperProtocol {
+    func fetchBirthdate() -> Date?
+    func storeBirthdate(_ birthdate: Date) throws
+}
+
+class KeychainHelper: KeychainHelperProtocol {
 
     // MARK: - Public
 
-    static let live = KeychainHelper(environment: .live)
-    static let test = KeychainHelper(environment: .test)
+    static let shared = KeychainHelper()
 
     func fetchBirthdate() -> Date? {
-        if environment == .test {
-            return testDate
-        }
         var query: [String: Any] = baseQuery
         query[kSecReturnData as String] = true
         var item: CFTypeRef?
@@ -32,10 +33,6 @@ class KeychainHelper {
     }
 
     func storeBirthdate(_ birthdate: Date) throws {
-        if environment == .test {
-            testDate = birthdate
-            return
-        }
         let birthdateExists = (fetchBirthdate() != nil)
         let string = Self.dateFormatter.string(from: birthdate)
         let data = string.data(using: .utf8)!
@@ -56,14 +53,6 @@ class KeychainHelper {
 
     // MARK: - Private
 
-    private enum Environment {
-        case live
-        case test
-    }
-
-    private let environment: Environment
-    private var testDate = Date(timeIntervalSince1970: 0)
-
     private var baseQuery: [String: Any] {
         [kSecClass as String: kSecClassGenericPassword,
          kSecAttrAccount as String: "birthday",
@@ -75,14 +64,47 @@ class KeychainHelper {
         formatter.formatOptions = .withInternetDateTime
         return formatter
     }()
-
-    private init(environment: Environment) {
-        self.environment = environment
-    }
 }
 
 // MARK: - KeychainError
 
-enum KeychainError: Error {
+enum KeychainError: Error, LocalizedError {
     case failedToStoreBirthday(status: OSStatus)
+
+    var errorDescription: String? {
+        switch self {
+        case .failedToStoreBirthday(let status):
+            let message = errorMessage(status: status)
+            let format = String(key: "error.keychain.store")
+            return String(format: format, message)
+        }
+    }
+
+    func errorMessage(status: OSStatus) -> String {
+        if let message = SecCopyErrorMessageString(status, nil) as String? {
+            return message
+        } else {
+            let format = String(key: "error.osstatus.code")
+            return String(format: format, status)
+        }
+    }
+}
+
+// MARK: - TestKeychainHelper
+
+class TestKeychainHelper: KeychainHelperProtocol {
+
+    var birthdate: Date?
+    var error: KeychainError?
+
+    func fetchBirthdate() -> Date? {
+        birthdate
+    }
+
+    func storeBirthdate(_ birthdate: Date) throws {
+        if let error = error {
+            throw error
+        }
+        self.birthdate = birthdate
+    }
 }

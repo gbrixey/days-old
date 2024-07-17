@@ -12,24 +12,48 @@ import XCTest
 final class SettingsTests: XCTestCase {
 
     @MainActor
-    func testSetBirthdate() async {
+    func testSetBirthdateSuccess() async {
         let oldBirthdate = Date(timeIntervalSince1970: 0)
         let newBirthdate = Date(timeIntervalSince1970: 1000000000)
         let calendar = Calendar(identifier: .gregorian)
+        let keychainHelper = TestKeychainHelper()
+        keychainHelper.birthdate = oldBirthdate
         let store = TestStore(initialState: SettingsFeature.State(birthdate: oldBirthdate)) {
             SettingsFeature()
         } withDependencies: {
             $0.calendar = calendar
+            $0.keychainHelper = keychainHelper
         }
-        // The next line is just a sanity check
-        XCTAssertNotEqual(KeychainHelper.test.fetchBirthdate(), newBirthdate)
+        XCTAssertEqual(keychainHelper.birthdate, oldBirthdate)
         XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, [])
         await store.send(.setBirthdate(newBirthdate)) {
             $0.birthdate = newBirthdate
         }
         await store.receive(\.delegate.setBirthdate)
-        XCTAssertEqual(KeychainHelper.test.fetchBirthdate(), newBirthdate)
+        XCTAssertEqual(keychainHelper.birthdate, newBirthdate)
         XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, ["DaysOldWidget"])
+    }
+
+    @MainActor
+    func testSetBirthdateError() async {
+        let oldBirthdate = Date(timeIntervalSince1970: 0)
+        let newBirthdate = Date(timeIntervalSince1970: 1000000000)
+        let calendar = Calendar(identifier: .gregorian)
+        let error = KeychainError.failedToStoreBirthday(status: 12345)
+        let keychainHelper = TestKeychainHelper()
+        keychainHelper.birthdate = oldBirthdate
+        keychainHelper.error = error
+        let store = TestStore(initialState: SettingsFeature.State(birthdate: oldBirthdate)) {
+            SettingsFeature()
+        } withDependencies: {
+            $0.calendar = calendar
+            $0.keychainHelper = keychainHelper
+        }
+        await store.send(.setBirthdate(newBirthdate)) {
+            $0.alert = .errorAlertState(message: error.localizedDescription)
+        }
+        XCTAssertEqual(keychainHelper.birthdate, oldBirthdate)
+        XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, [])
     }
 
     @MainActor

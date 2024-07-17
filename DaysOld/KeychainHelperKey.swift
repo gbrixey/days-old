@@ -9,13 +9,13 @@ import Foundation
 import ComposableArchitecture
 
 private enum KeychainHelperKey: DependencyKey {
-    static let liveValue = KeychainHelper.live
-    static let testValue = KeychainHelper.test
-    static let previewValue = KeychainHelper.test
+    static let liveValue: KeychainHelperProtocol = KeychainHelper.shared
+    static let testValue: KeychainHelperProtocol = TestKeychainHelper()
+    static let previewValue: KeychainHelperProtocol = TestKeychainHelper()
 }
 
 extension DependencyValues {
-    var keychainHelper: KeychainHelper {
+    var keychainHelper: KeychainHelperProtocol {
         get { self[KeychainHelperKey.self] }
         set { self[KeychainHelperKey.self] = newValue }
     }

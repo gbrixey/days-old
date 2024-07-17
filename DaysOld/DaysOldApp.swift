@@ -16,9 +16,11 @@ struct DaysOldApp: App {
 
     var body: some Scene {
         WindowGroup {
-            DaysOldView(
-                store: DaysOldApp.store
-            )
+            if !_XCTIsTesting {
+                DaysOldView(
+                    store: DaysOldApp.store
+                )
+            }
         }
     }
 
@@ -33,6 +35,6 @@ struct DaysOldApp: App {
     }
 
     private static var initialBirthdate: Date? {
-        KeychainHelper.live.fetchBirthdate()
+        KeychainHelper.shared.fetchBirthdate()
     }
 }
