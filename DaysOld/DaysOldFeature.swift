@@ -43,7 +43,7 @@ struct DaysOldFeature {
             switch action {
             case .startTimer:
                 // Set initial `daysSinceBirthdate` value
-                state.daysSinceBirthdate = state.birthdate?.daysBefore(now)
+                state.daysSinceBirthdate = calendar.daysBetween(date1: state.birthdate, date2: now)
                 return .run { send in
                     for await _ in clock.timer(interval: .seconds(5)) {
                         await send(.timerTick)
@@ -52,14 +52,14 @@ struct DaysOldFeature {
             case .stopTimer:
                 return .cancel(id: CancelID.timer)
             case .timerTick:
-                state.daysSinceBirthdate = state.birthdate?.daysBefore(now)
+                state.daysSinceBirthdate = calendar.daysBetween(date1: state.birthdate, date2: now)
                 return .none
             case .settingsButtonTapped:
                 state.settings = SettingsFeature.State(birthdate: state.birthdate ?? defaultDateForSettings)
                 return .none
             case .settingsAction(.presented(.delegate(.setBirthdate(let date)))):
                 state.birthdate = date
-                state.daysSinceBirthdate = date.daysBefore(now)
+                state.daysSinceBirthdate = calendar.daysBetween(date1: date, date2: now)
                 return .none
             case .settingsAction:
                 return .none
@@ -73,6 +73,6 @@ struct DaysOldFeature {
     // MARK: - Private
 
     private var defaultDateForSettings: Date {
-        now.movingToBeginningOfDay(with: calendar)
+        calendar.beginningOfDate(now)
     }
 }

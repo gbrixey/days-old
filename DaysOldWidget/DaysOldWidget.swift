@@ -14,22 +14,36 @@ struct DaysOldProvider: TimelineProvider {
     }
 
     func getSnapshot(in context: Context, completion: @escaping (DaysOldEntry) -> ()) {
+        let daysSinceBirthdate = calendar.daysBetween(date1: birthdate, date2: .now)
         let entry = DaysOldEntry(date: .now, daysSinceBirthdate: daysSinceBirthdate ?? 10958)
         completion(entry)
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        let entry = DaysOldEntry(date: .now, daysSinceBirthdate: daysSinceBirthdate)
-        let calendar = Calendar.autoupdatingCurrent
-        let nextUpdateDate = calendar
-            .date(byAdding: .day, value: 1, to: .now, wrappingComponents: true)!
-            .movingToBeginningOfDay(with: calendar)
-        let timeline = Timeline(entries: [entry], policy: .after(nextUpdateDate))
+        guard let birthdate = birthdate,
+              let daysSinceBirthdate = calendar.daysBetween(date1: birthdate, date2: .now) else {
+            let emptyTimeline = Timeline<DaysOldEntry>(entries: [], policy: .never)
+            completion(emptyTimeline)
+            return
+        }
+        let currentEntry = DaysOldEntry(date: .now, daysSinceBirthdate: daysSinceBirthdate)
+        let nextUpdateDate = calendar.date(
+            byAdding: .day,
+            value: daysSinceBirthdate + 1,
+            to: birthdate,
+            wrappingComponents: true
+        )!
+        let nextEntry = DaysOldEntry(date: nextUpdateDate, daysSinceBirthdate: daysSinceBirthdate + 1)
+        let timeline = Timeline(entries: [currentEntry, nextEntry], policy: .after(nextUpdateDate))
         completion(timeline)
     }
 
-    private var daysSinceBirthdate: Int? {
-        KeychainHelper.shared.fetchBirthdate()?.daysBefore(.now)
+    private var calendar: Calendar {
+        .autoupdatingCurrent
+    }
+
+    private var birthdate: Date? {
+        KeychainHelper.shared.fetchBirthdate()
     }
 }
 

@@ -10,20 +10,23 @@ import WidgetKit
 import ComposableArchitecture
 
 protocol WidgetCenterProtocol {
-    func reloadTimelines(ofKind: String)
+    func reloadDaysOldWidget()
 }
 
 class TestWidgetCenter: WidgetCenterProtocol {
     static let shared = TestWidgetCenter()
-    var kindsReloaded: [String] = []
+    var didReload = false
 
-    func reloadTimelines(ofKind kind: String) {
-        kindsReloaded.append(kind)
+    func reloadDaysOldWidget() {
+        didReload = true
     }
 }
 
 extension WidgetCenter: WidgetCenterProtocol {
-    // Already conforms
+
+    func reloadDaysOldWidget() {
+        reloadTimelines(ofKind: "DaysOldWidget")
+    }
 }
 
 // MARK: - DependencyKey

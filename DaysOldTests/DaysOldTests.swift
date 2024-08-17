@@ -23,11 +23,11 @@ final class DaysOldTests: XCTestCase {
             $0.date.now = now
         }
         await store.send(.settingsButtonTapped) {
-            $0.settings = SettingsFeature.State(birthdate: now.movingToBeginningOfDay(with: calendar))
+            $0.settings = SettingsFeature.State(birthdate: calendar.beginningOfDate(now))
         }
         await store.send(.settingsAction(.presented(.delegate(.setBirthdate(birthdate))))) {
             $0.birthdate = birthdate
-            $0.daysSinceBirthdate = birthdate.daysBefore(now)
+            $0.daysSinceBirthdate = calendar.daysBetween(date1: birthdate, date2: now)
         }
         await store.send(.settingsAction(.presented(.doneButtonTapped)))
         await store.receive(\.settingsAction.dismiss) {
@@ -49,7 +49,10 @@ final class DaysOldTests: XCTestCase {
             $0.date.now = now
             $0.continuousClock = clock
         }
-        let expectedDaysSinceBirthdate = birthdate.daysBefore(now)
+        guard let expectedDaysSinceBirthdate = calendar.daysBetween(date1: birthdate, date2: now) else {
+            XCTFail()
+            return
+        }
         await store.send(.startTimer) {
             $0.daysSinceBirthdate = expectedDaysSinceBirthdate
         }

@@ -53,7 +53,7 @@ struct SettingsFeature {
                 do {
                     try keychainHelper.storeBirthdate(birthdate)
                     state.birthdate = birthdate
-                    widgetCenter.reloadTimelines(ofKind: "DaysOldWidget")
+                    widgetCenter.reloadDaysOldWidget()
                     return .send(.delegate(.setBirthdate(birthdate)))
                 } catch {
                     state.alert = .errorAlertState(message: error.localizedDescription)
@@ -63,7 +63,7 @@ struct SettingsFeature {
                 state.shouldShowTime = shouldShowTime
                 // When disabling the time picker, remove hour and minute from the birthdate
                 if !shouldShowTime {
-                    let newBirthdate = state.birthdate.movingToBeginningOfDay(with: calendar)
+                    let newBirthdate = calendar.beginningOfDate(state.birthdate)
                     guard newBirthdate != state.birthdate else { return .none }
                     return .send(.setBirthdate(newBirthdate))
                 }

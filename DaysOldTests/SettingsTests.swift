@@ -25,13 +25,13 @@ final class SettingsTests: XCTestCase {
             $0.keychainHelper = keychainHelper
         }
         XCTAssertEqual(keychainHelper.birthdate, oldBirthdate)
-        XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, [])
+        XCTAssertFalse(TestWidgetCenter.shared.didReload)
         await store.send(.setBirthdate(newBirthdate)) {
             $0.birthdate = newBirthdate
         }
         await store.receive(\.delegate.setBirthdate)
         XCTAssertEqual(keychainHelper.birthdate, newBirthdate)
-        XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, ["DaysOldWidget"])
+        XCTAssert(TestWidgetCenter.shared.didReload)
     }
 
     @MainActor
@@ -53,7 +53,7 @@ final class SettingsTests: XCTestCase {
             $0.alert = .errorAlertState(message: error.localizedDescription)
         }
         XCTAssertEqual(keychainHelper.birthdate, oldBirthdate)
-        XCTAssertEqual(TestWidgetCenter.shared.kindsReloaded, [])
+        XCTAssertFalse(TestWidgetCenter.shared.didReload)
     }
 
     @MainActor
@@ -77,7 +77,7 @@ final class SettingsTests: XCTestCase {
         await store.send(.setShouldShowTime(false)) {
             $0.shouldShowTime = false
         }
-        let birthdate2 = birthdate1.movingToBeginningOfDay(with: calendar)
+        let birthdate2 = calendar.beginningOfDate(birthdate1)
         await store.receive(\.setBirthdate) {
             $0.birthdate = birthdate2
         }
