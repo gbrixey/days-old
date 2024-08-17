@@ -55,19 +55,52 @@ struct DaysOldEntry: TimelineEntry {
 struct DaysOldWidgetEntryView : View {
     var entry: DaysOldProvider.Entry
 
+    @Environment(\.widgetFamily) var family
+
     var body: some View {
-        VStack(spacing: 4) {
-            if let daysSinceBirthdate = entry.daysSinceBirthdate {
-                Text("days.old.prefix")
-                    .font(.system(size: 16))
-                Text(daysSinceBirthdate, format: .number)
-                    .font(.system(size: 24, weight: .semibold))
-                Text(daysSinceBirthdate == 1 ? "days.old.suffix.singular" : "days.old.suffix.plural")
-                    .font(.system(size: 16))
-            } else {
-                Text("tap.to.set.up")
+        switch family {
+        case .accessoryCircular, .accessoryRectangular:
+            VStack(spacing: 0) {
+                if entry.daysSinceBirthdate != nil {
+                    daysOldText
+                        .font(.system(size: 16, weight: .semibold))
+                    daysOldSuffix
+                        .font(.system(size: 15))
+                } else {
+                    Text("tap.to.set.up")
+                }
             }
+            .privacySensitive()
+        case .accessoryInline:
+            if entry.daysSinceBirthdate != nil {
+                (daysOldText + Text(" ") + daysOldSuffix)
+                    .privacySensitive()
+            } else {
+                EmptyView()
+            }
+        default:
+            VStack(spacing: 4) {
+                if entry.daysSinceBirthdate != nil {
+                    Text("days.old.prefix")
+                        .font(.system(size: 16))
+                    daysOldText
+                        .font(.system(size: 24, weight: .semibold))
+                    daysOldSuffix
+                        .font(.system(size: 16))
+                } else {
+                    Text("tap.to.set.up")
+                }
+            }
+            .privacySensitive()
         }
+    }
+
+    private var daysOldText: Text {
+        Text(entry.daysSinceBirthdate ?? 0, format: .number)
+    }
+
+    private var daysOldSuffix: Text {
+        Text(entry.daysSinceBirthdate == 1 ? "days.old.suffix.singular" : "days.old.suffix.plural")
     }
 }
 
@@ -79,7 +112,7 @@ struct DaysOldWidget: Widget {
         }
         .configurationDisplayName("configuration.display.name")
         .description("configuration.description")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline, .systemSmall])
     }
 }
 
