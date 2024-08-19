@@ -39,6 +39,21 @@
 		7EB534F62C47378500FFD6B7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */; };
 		7EB534F82C70280C00FFD6B7 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F72C70280C00FFD6B7 /* CalendarExtensions.swift */; };
 		7EB534F92C70280C00FFD6B7 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F72C70280C00FFD6B7 /* CalendarExtensions.swift */; };
+		7EB535012C73AED100FFD6B7 /* DaysOldWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB535002C73AED100FFD6B7 /* DaysOldWatchApp.swift */; };
+		7EB535032C73AED100FFD6B7 /* DaysOldWatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB535022C73AED100FFD6B7 /* DaysOldWatchView.swift */; };
+		7EB535052C73AED200FFD6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB535042C73AED200FFD6B7 /* Assets.xcassets */; };
+		7EB535082C73AED200FFD6B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB535072C73AED200FFD6B7 /* Preview Assets.xcassets */; };
+		7EB535122C73AED200FFD6B7 /* DaysOldWatch_Watch_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB535112C73AED200FFD6B7 /* DaysOldWatch_Watch_AppTests.swift */; };
+		7EB5351C2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5351B2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITests.swift */; };
+		7EB5351E2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5351D2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITestsLaunchTests.swift */; };
+		7EB535212C73AED200FFD6B7 /* DaysOldWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7EB534FE2C73AED100FFD6B7 /* DaysOldWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7EB5352D2C73B08A00FFD6B7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 7EB5352C2C73B08A00FFD6B7 /* ComposableArchitecture */; };
+		7EB5352E2C73B13D00FFD6B7 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5349C2C1F58B400FFD6B7 /* KeychainHelper.swift */; };
+		7EB535302C73B19500FFD6B7 /* DaysOldWatchFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5352F2C73B19500FFD6B7 /* DaysOldWatchFeature.swift */; };
+		7EB535312C73B2EE00FFD6B7 /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F72C70280C00FFD6B7 /* CalendarExtensions.swift */; };
+		7EB535322C73B2F100FFD6B7 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */; };
+		7EB535332C73B2F600FFD6B7 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */; };
+		7EB535352C73B40400FFD6B7 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7EB535342C73B40400FFD6B7 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +78,27 @@
 			remoteGlobalIDString = 7EB534D62C447B0E00FFD6B7;
 			remoteInfo = DaysOldWidgetExtension;
 		};
+		7EB5350E2C73AED200FFD6B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB534662C1F56FF00FFD6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EB534FD2C73AED100FFD6B7;
+			remoteInfo = "DaysOldWatch Watch App";
+		};
+		7EB535182C73AED200FFD6B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB534662C1F56FF00FFD6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EB534FD2C73AED100FFD6B7;
+			remoteInfo = "DaysOldWatch Watch App";
+		};
+		7EB5351F2C73AED200FFD6B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB534662C1F56FF00FFD6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7EB534FD2C73AED100FFD6B7;
+			remoteInfo = "DaysOldWatch Watch App";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,6 +111,17 @@
 				7EB534E62C447B0F00FFD6B7 /* DaysOldWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB535252C73AED200FFD6B7 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				7EB535212C73AED200FFD6B7 /* DaysOldWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -114,6 +161,19 @@
 		7EB534F22C45C87700FFD6B7 /* WidgetCenterKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCenterKey.swift; sourceTree = "<group>"; };
 		7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		7EB534F72C70280C00FFD6B7 /* CalendarExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensions.swift; sourceTree = "<group>"; };
+		7EB534FE2C73AED100FFD6B7 /* DaysOldWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DaysOldWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB535002C73AED100FFD6B7 /* DaysOldWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWatchApp.swift; sourceTree = "<group>"; };
+		7EB535022C73AED100FFD6B7 /* DaysOldWatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWatchView.swift; sourceTree = "<group>"; };
+		7EB535042C73AED200FFD6B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7EB535072C73AED200FFD6B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7EB5350D2C73AED200FFD6B7 /* DaysOldWatch Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DaysOldWatch Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB535112C73AED200FFD6B7 /* DaysOldWatch_Watch_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWatch_Watch_AppTests.swift; sourceTree = "<group>"; };
+		7EB535172C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DaysOldWatch Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7EB5351B2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWatch_Watch_AppUITests.swift; sourceTree = "<group>"; };
+		7EB5351D2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWatch_Watch_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7EB5352F2C73B19500FFD6B7 /* DaysOldWatchFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldWatchFeature.swift; sourceTree = "<group>"; };
+		7EB535342C73B40400FFD6B7 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		7EB535362C73B69500FFD6B7 /* DaysOldWatch Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DaysOldWatch Watch App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +209,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EB534FB2C73AED100FFD6B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB5352D2C73B08A00FFD6B7 /* ComposableArchitecture in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB5350A2C73AED200FFD6B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB535142C73AED200FFD6B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,6 +241,9 @@
 				7EB534DC2C447B0E00FFD6B7 /* DaysOldWidget */,
 				7EB534822C1F570000FFD6B7 /* DaysOldTests */,
 				7EB5348C2C1F570000FFD6B7 /* DaysOldUITests */,
+				7EB534FF2C73AED100FFD6B7 /* DaysOldWatch Watch App */,
+				7EB535102C73AED200FFD6B7 /* DaysOldWatch Watch AppTests */,
+				7EB5351A2C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests */,
 				7EB534B32C3B6E2E00FFD6B7 /* README.md */,
 				7EB5346F2C1F56FF00FFD6B7 /* Products */,
 				7EB5349E2C1F58D300FFD6B7 /* Frameworks */,
@@ -172,6 +257,9 @@
 				7EB5347F2C1F570000FFD6B7 /* DaysOldTests.xctest */,
 				7EB534892C1F570000FFD6B7 /* DaysOldUITests.xctest */,
 				7EB534D72C447B0E00FFD6B7 /* DaysOldWidgetExtension.appex */,
+				7EB534FE2C73AED100FFD6B7 /* DaysOldWatch Watch App.app */,
+				7EB5350D2C73AED200FFD6B7 /* DaysOldWatch Watch AppTests.xctest */,
+				7EB535172C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -256,6 +344,45 @@
 			path = DaysOldWidget;
 			sourceTree = "<group>";
 		};
+		7EB534FF2C73AED100FFD6B7 /* DaysOldWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				7EB535362C73B69500FFD6B7 /* DaysOldWatch Watch App.entitlements */,
+				7EB535002C73AED100FFD6B7 /* DaysOldWatchApp.swift */,
+				7EB535022C73AED100FFD6B7 /* DaysOldWatchView.swift */,
+				7EB5352F2C73B19500FFD6B7 /* DaysOldWatchFeature.swift */,
+				7EB535042C73AED200FFD6B7 /* Assets.xcassets */,
+				7EB535342C73B40400FFD6B7 /* Localizable.xcstrings */,
+				7EB535062C73AED200FFD6B7 /* Preview Content */,
+			);
+			path = "DaysOldWatch Watch App";
+			sourceTree = "<group>";
+		};
+		7EB535062C73AED200FFD6B7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				7EB535072C73AED200FFD6B7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7EB535102C73AED200FFD6B7 /* DaysOldWatch Watch AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				7EB535112C73AED200FFD6B7 /* DaysOldWatch_Watch_AppTests.swift */,
+			);
+			path = "DaysOldWatch Watch AppTests";
+			sourceTree = "<group>";
+		};
+		7EB5351A2C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7EB5351B2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITests.swift */,
+				7EB5351D2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITestsLaunchTests.swift */,
+			);
+			path = "DaysOldWatch Watch AppUITests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,11 +394,13 @@
 				7EB5346B2C1F56FF00FFD6B7 /* Frameworks */,
 				7EB5346C2C1F56FF00FFD6B7 /* Resources */,
 				7EB534E72C447B0F00FFD6B7 /* Embed Foundation Extensions */,
+				7EB535252C73AED200FFD6B7 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				7EB534E52C447B0F00FFD6B7 /* PBXTargetDependency */,
+				7EB535202C73AED200FFD6B7 /* PBXTargetDependency */,
 			);
 			name = DaysOld;
 			packageProductDependencies = (
@@ -334,6 +463,62 @@
 			productReference = 7EB534D72C447B0E00FFD6B7 /* DaysOldWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		7EB534FD2C73AED100FFD6B7 /* DaysOldWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EB535222C73AED200FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWatch Watch App" */;
+			buildPhases = (
+				7EB534FA2C73AED100FFD6B7 /* Sources */,
+				7EB534FB2C73AED100FFD6B7 /* Frameworks */,
+				7EB534FC2C73AED100FFD6B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DaysOldWatch Watch App";
+			packageProductDependencies = (
+				7EB5352C2C73B08A00FFD6B7 /* ComposableArchitecture */,
+			);
+			productName = "DaysOldWatch Watch App";
+			productReference = 7EB534FE2C73AED100FFD6B7 /* DaysOldWatch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7EB5350C2C73AED200FFD6B7 /* DaysOldWatch Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EB535262C73AED200FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWatch Watch AppTests" */;
+			buildPhases = (
+				7EB535092C73AED200FFD6B7 /* Sources */,
+				7EB5350A2C73AED200FFD6B7 /* Frameworks */,
+				7EB5350B2C73AED200FFD6B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EB5350F2C73AED200FFD6B7 /* PBXTargetDependency */,
+			);
+			name = "DaysOldWatch Watch AppTests";
+			productName = "DaysOldWatch Watch AppTests";
+			productReference = 7EB5350D2C73AED200FFD6B7 /* DaysOldWatch Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7EB535162C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7EB535292C73AED200FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWatch Watch AppUITests" */;
+			buildPhases = (
+				7EB535132C73AED200FFD6B7 /* Sources */,
+				7EB535142C73AED200FFD6B7 /* Frameworks */,
+				7EB535152C73AED200FFD6B7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7EB535192C73AED200FFD6B7 /* PBXTargetDependency */,
+			);
+			name = "DaysOldWatch Watch AppUITests";
+			productName = "DaysOldWatch Watch AppUITests";
+			productReference = 7EB535172C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -358,6 +543,17 @@
 					7EB534D62C447B0E00FFD6B7 = {
 						CreatedOnToolsVersion = 15.4;
 					};
+					7EB534FD2C73AED100FFD6B7 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					7EB5350C2C73AED200FFD6B7 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 7EB534FD2C73AED100FFD6B7;
+					};
+					7EB535162C73AED200FFD6B7 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 7EB534FD2C73AED100FFD6B7;
+					};
 				};
 			};
 			buildConfigurationList = 7EB534692C1F56FF00FFD6B7 /* Build configuration list for PBXProject "DaysOld" */;
@@ -381,6 +577,9 @@
 				7EB5347E2C1F570000FFD6B7 /* DaysOldTests */,
 				7EB534882C1F570000FFD6B7 /* DaysOldUITests */,
 				7EB534D62C447B0E00FFD6B7 /* DaysOldWidgetExtension */,
+				7EB534FD2C73AED100FFD6B7 /* DaysOldWatch Watch App */,
+				7EB5350C2C73AED200FFD6B7 /* DaysOldWatch Watch AppTests */,
+				7EB535162C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -417,6 +616,30 @@
 			files = (
 				7EB534EC2C447D4600FFD6B7 /* Localizable.xcstrings in Resources */,
 				7EB534E22C447B0F00FFD6B7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB534FC2C73AED100FFD6B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB535082C73AED200FFD6B7 /* Preview Assets.xcassets in Resources */,
+				7EB535052C73AED200FFD6B7 /* Assets.xcassets in Resources */,
+				7EB535352C73B40400FFD6B7 /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB5350B2C73AED200FFD6B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB535152C73AED200FFD6B7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +695,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7EB534FA2C73AED100FFD6B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB535312C73B2EE00FFD6B7 /* CalendarExtensions.swift in Sources */,
+				7EB535032C73AED100FFD6B7 /* DaysOldWatchView.swift in Sources */,
+				7EB5352E2C73B13D00FFD6B7 /* KeychainHelper.swift in Sources */,
+				7EB535332C73B2F600FFD6B7 /* StringExtensions.swift in Sources */,
+				7EB535012C73AED100FFD6B7 /* DaysOldWatchApp.swift in Sources */,
+				7EB535302C73B19500FFD6B7 /* DaysOldWatchFeature.swift in Sources */,
+				7EB535322C73B2F100FFD6B7 /* DateExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB535092C73AED200FFD6B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB535122C73AED200FFD6B7 /* DaysOldWatch_Watch_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EB535132C73AED200FFD6B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EB5351C2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITests.swift in Sources */,
+				7EB5351E2C73AED200FFD6B7 /* DaysOldWatch_Watch_AppUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -489,6 +743,21 @@
 			isa = PBXTargetDependency;
 			target = 7EB534D62C447B0E00FFD6B7 /* DaysOldWidgetExtension */;
 			targetProxy = 7EB534E42C447B0F00FFD6B7 /* PBXContainerItemProxy */;
+		};
+		7EB5350F2C73AED200FFD6B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EB534FD2C73AED100FFD6B7 /* DaysOldWatch Watch App */;
+			targetProxy = 7EB5350E2C73AED200FFD6B7 /* PBXContainerItemProxy */;
+		};
+		7EB535192C73AED200FFD6B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EB534FD2C73AED100FFD6B7 /* DaysOldWatch Watch App */;
+			targetProxy = 7EB535182C73AED200FFD6B7 /* PBXContainerItemProxy */;
+		};
+		7EB535202C73AED200FFD6B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7EB534FD2C73AED100FFD6B7 /* DaysOldWatch Watch App */;
+			targetProxy = 7EB5351F2C73AED200FFD6B7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -621,6 +890,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOld;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -660,6 +930,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOld;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -836,6 +1107,153 @@
 			};
 			name = Release;
 		};
+		7EB535232C73AED200FFD6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "DaysOldWatch Watch App/DaysOldWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DaysOldWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOldWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.glenb.DaysOld;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glenb.DaysOld.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		7EB535242C73AED200FFD6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "DaysOldWatch Watch App/DaysOldWatch Watch App.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DaysOldWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOldWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.glenb.DaysOld;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glenb.DaysOld.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		7EB535272C73AED200FFD6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glenb.DaysOld.DaysOldWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysOldWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DaysOldWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		7EB535282C73AED200FFD6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glenb.DaysOld.DaysOldWatch-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DaysOldWatch Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DaysOldWatch Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
+		7EB5352A2C73AED200FFD6B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glenb.DaysOld.DaysOldWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "DaysOldWatch Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		7EB5352B2C73AED200FFD6B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.glenb.DaysOld.DaysOldWatch-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "DaysOldWatch Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -884,6 +1302,33 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		7EB535222C73AED200FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EB535232C73AED200FFD6B7 /* Debug */,
+				7EB535242C73AED200FFD6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EB535262C73AED200FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWatch Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EB535272C73AED200FFD6B7 /* Debug */,
+				7EB535282C73AED200FFD6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7EB535292C73AED200FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOldWatch Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7EB5352A2C73AED200FFD6B7 /* Debug */,
+				7EB5352B2C73AED200FFD6B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -899,6 +1344,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		7EB534A42C2200F800FFD6B7 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7EB534A32C2200F700FFD6B7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		7EB5352C2C73B08A00FFD6B7 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7EB534A32C2200F700FFD6B7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;

@@ -1,0 +1,46 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "days.old.prefix" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "You are"
+          }
+        }
+      }
+    },
+    "days.old.suffix.plural" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "days old"
+          }
+        }
+      }
+    },
+    "days.old.suffix.singular" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "day old"
+          }
+        }
+      }
+    },
+    "watch.set.up" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Set up birth date on iPhone"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
