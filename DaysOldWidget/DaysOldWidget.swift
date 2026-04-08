@@ -75,8 +75,19 @@ struct DaysOldWidgetEntryView : View {
             .privacySensitive()
         case .accessoryInline:
             if entry.daysSinceBirthdate != nil {
-                (daysOldText + Text(" ") + daysOldSuffix)
+                Text("\(daysOldText) \(daysOldSuffix)")
                     .privacySensitive()
+            } else {
+                EmptyView()
+            }
+        case .accessoryCorner:
+            if entry.daysSinceBirthdate != nil {
+                daysOldText
+                    .privacySensitive()
+                    .widgetCurvesContent()
+                    .widgetLabel {
+                        daysOldSuffix
+                    }
             } else {
                 EmptyView()
             }
@@ -115,15 +126,23 @@ struct DaysOldWidget: Widget {
         .configurationDisplayName("configuration.display.name")
         .description("configuration.description")
 #if os(watchOS)
-        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
+        .supportedFamilies([.accessoryRectangular, .accessoryInline, .accessoryCorner])
 #else
-        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline, .systemSmall])
+        .supportedFamilies([.accessoryRectangular, .accessoryInline, .systemSmall])
 #endif
     }
 }
 
+#if os(watchOS)
+#Preview(as: .accessoryCorner) {
+    DaysOldWidget()
+} timeline: {
+    DaysOldEntry(date: .now, daysSinceBirthdate: 12345)
+}
+#else
 #Preview(as: .systemSmall) {
     DaysOldWidget()
 } timeline: {
     DaysOldEntry(date: .now, daysSinceBirthdate: 12345)
 }
+#endif

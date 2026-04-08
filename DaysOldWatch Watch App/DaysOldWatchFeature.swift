@@ -47,11 +47,10 @@ struct DaysOldWatchFeature {
             case .requestUpdatedBirthdate:
                 state.birthdateIsLoading = true
                 return .run { send in
-                    let birthdate = await watchHelper.requestWatchUpdate()
-                    if let birthdate = birthdate {
+                    if let birthdate = await watchHelper.requestWatchUpdate() {
                         try? keychainHelper.storeBirthdate(birthdate)
+                        await send(.updateBirthdate(birthdate))
                     }
-                    await send(.updateBirthdate(birthdate))
                 }
             case .observeNotification:
                 return .publisher {

@@ -27,6 +27,8 @@ extension WatchHelper: WatchHelperProtocol {
             WCSession.default.sendMessage(message as [String: Any]) { reply in
                 let birthdate = reply[WatchMessageKey.birthdate] as? Date
                 continuation.resume(returning: birthdate)
+            } errorHandler: { _ in
+                continuation.resume(returning: nil)
             }
         }
     }

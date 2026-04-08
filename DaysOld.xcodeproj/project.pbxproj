@@ -12,6 +12,18 @@
 		7E7760B12F85BF2E00103F5A /* KeychainHelperKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534EF2C448F1A00FFD6B7 /* KeychainHelperKey.swift */; };
 		7E7760B62F85C69B00103F5A /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760B52F85C69800103F5A /* NotificationName.swift */; };
 		7E7760B72F85C69B00103F5A /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7760B52F85C69800103F5A /* NotificationName.swift */; };
+		7E7760BA2F85DCD700103F5A /* DaysOldWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534DF2C447B0E00FFD6B7 /* DaysOldWidget.swift */; };
+		7E7760BB2F85DCD700103F5A /* CalendarExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F72C70280C00FFD6B7 /* CalendarExtensions.swift */; };
+		7E7760BC2F85DCD700103F5A /* DaysOldWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534DD2C447B0E00FFD6B7 /* DaysOldWidgetBundle.swift */; };
+		7E7760BD2F85DCD700103F5A /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534F42C47330B00FFD6B7 /* StringExtensions.swift */; };
+		7E7760BE2F85DCD700103F5A /* WidgetKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBACF522F849E0200163887 /* WidgetKind.swift */; };
+		7E7760BF2F85DCD700103F5A /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534B12C3B136800FFD6B7 /* DateExtensions.swift */; };
+		7E7760C02F85DCD700103F5A /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB5349C2C1F58B400FFD6B7 /* KeychainHelper.swift */; };
+		7E7760C22F85DCD700103F5A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB534DA2C447B0E00FFD6B7 /* SwiftUI.framework */; };
+		7E7760C32F85DCD700103F5A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EB534D82C447B0E00FFD6B7 /* WidgetKit.framework */; };
+		7E7760C52F85DCD700103F5A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534EB2C447D4600FFD6B7 /* Localizable.xcstrings */; };
+		7E7760C62F85DCD700103F5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534E12C447B0F00FFD6B7 /* Assets.xcassets */; };
+		7E7760CC2F85DD6B00103F5A /* DaysOldWidgetWatchExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 7E7760CA2F85DCD700103F5A /* DaysOldWidgetWatchExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7EB534722C1F56FF00FFD6B7 /* DaysOldApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534712C1F56FF00FFD6B7 /* DaysOldApp.swift */; };
 		7EB534742C1F56FF00FFD6B7 /* DaysOldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB534732C1F56FF00FFD6B7 /* DaysOldView.swift */; };
 		7EB534762C1F570000FFD6B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EB534752C1F570000FFD6B7 /* Assets.xcassets */; };
@@ -68,6 +80,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7E7760CD2F85DD6B00103F5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB534662C1F56FF00FFD6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E7760B82F85DCD700103F5A;
+			remoteInfo = DaysOldWidgetWatchExtension;
+		};
+		7E7760D02F85DD7500103F5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7EB534662C1F56FF00FFD6B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E7760B82F85DCD700103F5A;
+			remoteInfo = DaysOldWidgetWatchExtension;
+		};
 		7EB534802C1F570000FFD6B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7EB534662C1F56FF00FFD6B7 /* Project object */;
@@ -113,6 +139,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		7E7760CF2F85DD6B00103F5A /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				7E7760CC2F85DD6B00103F5A /* DaysOldWidgetWatchExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EB534E72C447B0F00FFD6B7 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,6 +176,8 @@
 
 /* Begin PBXFileReference section */
 		7E7760B52F85C69800103F5A /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		7E7760CA2F85DCD700103F5A /* DaysOldWidgetWatchExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DaysOldWidgetWatchExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E7760CB2F85DCD700103F5A /* DaysOldWidgetWatchExtension-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "DaysOldWidgetWatchExtension-Info.plist"; path = "/Users/glenbrixey/Code/DaysOld/DaysOldWidget/DaysOldWidgetWatchExtension-Info.plist"; sourceTree = "<absolute>"; };
 		7EB5346E2C1F56FF00FFD6B7 /* DaysOld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DaysOld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EB534712C1F56FF00FFD6B7 /* DaysOldApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldApp.swift; sourceTree = "<group>"; };
 		7EB534732C1F56FF00FFD6B7 /* DaysOldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysOldView.swift; sourceTree = "<group>"; };
@@ -193,6 +232,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7E7760C12F85DCD700103F5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7760C22F85DCD700103F5A /* SwiftUI.framework in Frameworks */,
+				7E7760C32F85DCD700103F5A /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EB5346B2C1F56FF00FFD6B7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -277,6 +325,7 @@
 				7EB534FE2C73AED100FFD6B7 /* DaysOldWatch Watch App.app */,
 				7EB5350D2C73AED200FFD6B7 /* DaysOldWatch Watch AppTests.xctest */,
 				7EB535172C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests.xctest */,
+				7E7760CA2F85DCD700103F5A /* DaysOldWidgetWatchExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -355,6 +404,7 @@
 				7EB534EB2C447D4600FFD6B7 /* Localizable.xcstrings */,
 				7EB534F12C45C50A00FFD6B7 /* DaysOldWidgetExtension.entitlements */,
 				7EB534E32C447B0F00FFD6B7 /* Info.plist */,
+				7E7760CB2F85DCD700103F5A /* DaysOldWidgetWatchExtension-Info.plist */,
 			);
 			path = DaysOldWidget;
 			sourceTree = "<group>";
@@ -415,6 +465,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7E7760B82F85DCD700103F5A /* DaysOldWidgetWatchExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7E7760C72F85DCD700103F5A /* Build configuration list for PBXNativeTarget "DaysOldWidgetWatchExtension" */;
+			buildPhases = (
+				7E7760B92F85DCD700103F5A /* Sources */,
+				7E7760C12F85DCD700103F5A /* Frameworks */,
+				7E7760C42F85DCD700103F5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DaysOldWidgetWatchExtension;
+			productName = DaysOldWidgetExtension;
+			productReference = 7E7760CA2F85DCD700103F5A /* DaysOldWidgetWatchExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7EB5346D2C1F56FF00FFD6B7 /* DaysOld */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7EB534932C1F570000FFD6B7 /* Build configuration list for PBXNativeTarget "DaysOld" */;
@@ -499,10 +566,13 @@
 				7EB534FA2C73AED100FFD6B7 /* Sources */,
 				7EB534FB2C73AED100FFD6B7 /* Frameworks */,
 				7EB534FC2C73AED100FFD6B7 /* Resources */,
+				7E7760CF2F85DD6B00103F5A /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				7E7760CE2F85DD6B00103F5A /* PBXTargetDependency */,
+				7E7760D12F85DD7500103F5A /* PBXTargetDependency */,
 			);
 			name = "DaysOldWatch Watch App";
 			packageProductDependencies = (
@@ -609,11 +679,21 @@
 				7EB534FD2C73AED100FFD6B7 /* DaysOldWatch Watch App */,
 				7EB5350C2C73AED200FFD6B7 /* DaysOldWatch Watch AppTests */,
 				7EB535162C73AED200FFD6B7 /* DaysOldWatch Watch AppUITests */,
+				7E7760B82F85DCD700103F5A /* DaysOldWidgetWatchExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7E7760C42F85DCD700103F5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7760C52F85DCD700103F5A /* Localizable.xcstrings in Resources */,
+				7E7760C62F85DCD700103F5A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EB5346C2C1F56FF00FFD6B7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -675,6 +755,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7E7760B92F85DCD700103F5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E7760BA2F85DCD700103F5A /* DaysOldWidget.swift in Sources */,
+				7E7760BB2F85DCD700103F5A /* CalendarExtensions.swift in Sources */,
+				7E7760BC2F85DCD700103F5A /* DaysOldWidgetBundle.swift in Sources */,
+				7E7760BD2F85DCD700103F5A /* StringExtensions.swift in Sources */,
+				7E7760BE2F85DCD700103F5A /* WidgetKind.swift in Sources */,
+				7E7760BF2F85DCD700103F5A /* DateExtensions.swift in Sources */,
+				7E7760C02F85DCD700103F5A /* KeychainHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7EB5346A2C1F56FF00FFD6B7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -769,6 +863,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7E7760CE2F85DD6B00103F5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E7760B82F85DCD700103F5A /* DaysOldWidgetWatchExtension */;
+			targetProxy = 7E7760CD2F85DD6B00103F5A /* PBXContainerItemProxy */;
+		};
+		7E7760D12F85DD7500103F5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E7760B82F85DCD700103F5A /* DaysOldWidgetWatchExtension */;
+			targetProxy = 7E7760D02F85DD7500103F5A /* PBXContainerItemProxy */;
+		};
 		7EB534812C1F570000FFD6B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7EB5346D2C1F56FF00FFD6B7 /* DaysOld */;
@@ -802,6 +906,67 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		7E7760C82F85DCD700103F5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DaysOldWidget/DaysOldWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DaysOldWidget/DaysOldWidgetWatchExtension-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOldWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glenb.DaysOld.DaysOldWatchApp.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+			};
+			name = Debug;
+		};
+		7E7760C92F85DCD700103F5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = DaysOldWidget/DaysOldWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W23Z7PC8J5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "DaysOldWidget/DaysOldWidgetWatchExtension-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = DaysOldWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.glenb.DaysOld.DaysOldWatchApp.Widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		7EB534912C1F570000FFD6B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1297,6 +1462,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7E7760C72F85DCD700103F5A /* Build configuration list for PBXNativeTarget "DaysOldWidgetWatchExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E7760C82F85DCD700103F5A /* Debug */,
+				7E7760C92F85DCD700103F5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7EB534692C1F56FF00FFD6B7 /* Build configuration list for PBXProject "DaysOld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
