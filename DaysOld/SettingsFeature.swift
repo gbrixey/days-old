@@ -40,6 +40,7 @@ struct SettingsFeature {
     @Dependency(\.dismiss) var dismiss
     @Dependency(\.calendar) var calendar
     @Dependency(\.keychainHelper) var keychainHelper
+    @Dependency(\.watchHelper) var watchHelper
     @Dependency(\.widgetCenter) var widgetCenter
 
     var body: some ReducerOf<Self> {
@@ -54,6 +55,7 @@ struct SettingsFeature {
                     try keychainHelper.storeBirthdate(birthdate)
                     state.birthdate = birthdate
                     widgetCenter.reloadDaysOldWidget()
+                    watchHelper.updateWatch()
                     return .send(.delegate(.setBirthdate(birthdate)))
                 } catch {
                     state.alert = .errorAlertState(message: error.localizedDescription)

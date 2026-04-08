@@ -20,6 +20,8 @@ struct DaysOldWatchView: View {
                     .font(.system(size: 32, weight: .semibold))
                 Text(daysSinceBirthdate == 1 ? "days.old.suffix.singular" : "days.old.suffix.plural")
                     .font(.system(size: 24))
+            } else if store.birthdateIsLoading {
+                ProgressView("loading")
             } else {
                 Text("watch.set.up")
                     .font(.system(size: 24))

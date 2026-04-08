@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WatchConnectivity
 import ComposableArchitecture
 
 @main
@@ -19,6 +20,11 @@ struct DaysOldWatchApp: App {
                 store: DaysOldWatchApp.store
             )
         }
+    }
+
+    init() {
+        WCSession.default.delegate = WatchHelper.shared
+        WCSession.default.activate()
     }
 
     // MARK: - Private

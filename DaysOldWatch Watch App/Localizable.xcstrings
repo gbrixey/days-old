@@ -31,6 +31,17 @@
         }
       }
     },
+    "loading" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Loading…"
+          }
+        }
+      }
+    },
     "watch.set.up" : {
       "localizations" : {
         "en" : {

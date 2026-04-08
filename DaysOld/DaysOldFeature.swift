@@ -37,6 +37,8 @@ struct DaysOldFeature {
     @Dependency(\.date.now) var now
     @Dependency(\.calendar) var calendar
     @Dependency(\.continuousClock) var clock
+    @Dependency(\.widgetCenter) var widgetCenter
+    @Dependency(\.watchHelper) var watchHelper
 
     var body: some ReducerOf<Self> {
         Reduce { state, action in
@@ -52,7 +54,12 @@ struct DaysOldFeature {
             case .stopTimer:
                 return .cancel(id: CancelID.timer)
             case .timerTick:
-                state.daysSinceBirthdate = calendar.daysBetween(date1: state.birthdate, date2: now)
+                let newDaysSinceBirthdate = calendar.daysBetween(date1: state.birthdate, date2: now)
+                if newDaysSinceBirthdate != state.daysSinceBirthdate {
+                    state.daysSinceBirthdate = newDaysSinceBirthdate
+                    widgetCenter.reloadDaysOldWidget()
+                    watchHelper.updateWatch()
+                }
                 return .none
             case .settingsButtonTapped:
                 state.settings = SettingsFeature.State(birthdate: state.birthdate ?? defaultDateForSettings)

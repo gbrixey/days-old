@@ -10,6 +10,7 @@ import SwiftUI
 
 struct DaysOldProvider: TimelineProvider {
     func placeholder(in context: Context) -> DaysOldEntry {
+        // TODO: Check what happens if nil is used here
         DaysOldEntry(date: .now, daysSinceBirthdate: 12345)
     }
 
@@ -52,6 +53,7 @@ struct DaysOldEntry: TimelineEntry {
     let daysSinceBirthdate: Int?
 }
 
+/// - todo: Make the text more localization-friendly
 struct DaysOldWidgetEntryView : View {
     var entry: DaysOldProvider.Entry
 
@@ -106,13 +108,17 @@ struct DaysOldWidgetEntryView : View {
 
 struct DaysOldWidget: Widget {
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: "DaysOldWidget", provider: DaysOldProvider()) { entry in
+        StaticConfiguration(kind: WidgetKind.daysOld, provider: DaysOldProvider()) { entry in
             DaysOldWidgetEntryView(entry: entry)
                 .containerBackground(.fill.tertiary, for: .widget)
         }
         .configurationDisplayName("configuration.display.name")
         .description("configuration.description")
+#if os(watchOS)
+        .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline])
+#else
         .supportedFamilies([.accessoryCircular, .accessoryRectangular, .accessoryInline, .systemSmall])
+#endif
     }
 }
 

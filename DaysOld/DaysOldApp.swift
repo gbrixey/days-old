@@ -7,6 +7,7 @@
 
 import SwiftUI
 import TipKit
+import WatchConnectivity
 import ComposableArchitecture
 
 @main
@@ -26,6 +27,9 @@ struct DaysOldApp: App {
 
     init() {
         try? Tips.configure()
+        guard WCSession.isSupported() else { return }
+        WCSession.default.delegate = WatchHelper.shared
+        WCSession.default.activate()
     }
 
     // MARK: - Private

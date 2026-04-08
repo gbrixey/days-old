@@ -25,7 +25,7 @@ class TestWidgetCenter: WidgetCenterProtocol {
 extension WidgetCenter: WidgetCenterProtocol {
 
     func reloadDaysOldWidget() {
-        reloadTimelines(ofKind: "DaysOldWidget")
+        reloadTimelines(ofKind: WidgetKind.daysOld)
     }
 }
 
